@@ -1,22 +1,25 @@
-# HU03 - Atualização de Status do Pet
+## HU04 – Criação de Carrinho / Compra
 
-## História de usuário
+### História de Usuário
+**Como usuário autenticado  
+Quero criar um carrinho de compras  
+Para realizar uma compra de produtos**
 
-**Como usuário
-Quero atualizar o status de um pet
-Para refletir sua situação atual**
+### Regras de Negócio
+1. O carrinho deve aceitar:
+   - Lista de produtos
+   - Quantidade de cada produto
 
-## Regras de negócio
-
-1. Deve permitir atualizar o status do pet
-
-4. O status só pode ser:
-    - available
-    - pending
-4. Após atualização:
-    - O pet deve refletir o novo status na consulta
-
-5. Deve retornar erro ao tentar atualizar pet inexistente
+2. O usuário deve estar autenticado
+3. O produto deve existir
+4. A quantidade solicitada não pode exceder o estoque disponível
+5. Ao criar o carrinho com sucesso:
+   - Status code: **201**
+   - Deve retornar mensagem de sucesso
+6. Não deve permitir:
+   - Carrinho vazio
+   - Produto inexistente
+   - Quantidade maior que o estoque
 
 ## Mind map
 

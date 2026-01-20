@@ -1,25 +1,24 @@
-# HU01 - Cadastro Pet
+# HU02 - Login de Usuário
 
-## História de usuário
+### História de Usuário
+**Como usuário cadastrado  
+Quero realizar login no sistema  
+Para acessar funcionalidades restritas**
 
-**Como usuário do sistema Petstore
-Quero cadastrar um novo pet
-Para que ele fique disponível para consulta e venda**
+### Regras de Negócio
+1. O login deve aceitar:
+   - email
+   - password
 
-## Regras de negócio
-
-1. O cadastro deve aceitar:
-    - id
-    - name
-    - status (available, pending, sold)
-
-2. O campo name é obrigatório
-3. O campo status deve aceitar apenas valores válidos
-4. Ao cadastrar com sucesso:
-    - Status code: 200
-    - O pet deve poder ser consultado pelo id
-
-5. Não deve permitir cadastro com payload inválido
+2. O email e senha devem corresponder a um usuário válido
+3. Ao logar com sucesso:
+   - Status code: **200**
+   - Deve retornar um **token de autenticação**
+4. O token deve ser utilizado nas requisições protegidas
+5. Não deve permitir login com:
+   - Email inexistente
+   - Senha incorreta
+   - Campos vazios
 
 ## Mind map
 
