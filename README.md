@@ -27,6 +27,9 @@ A estratégia de testes utilizada nesse projeto pode ser encontrada em: **[Estra
 - **[Atualização de Pet](./docs/historias/HU03-atualizacao-pet.md)**
 - **[Venda de Pet](./docs/historias/HU04-venda-pet.md)**
 
+## Relatório de bugs
+O relatório de bugs feito nesse projeto está presente em **[Relatório de bugs](./docs/relatorio-de-bugs.md)**
+
 ## Ferramentas utilizadas
 * **Postman**: Execução de testes.
 * **Swagger**: Teste de contrato.

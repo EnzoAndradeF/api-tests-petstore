@@ -2,26 +2,30 @@
 
 ## História de usuário
 
-**Como administrador quero cadastrar um pet para que ele fique disponível no sistema**
+**Como usuário do sistema Petstore
+Quero cadastrar um novo pet
+Para que ele fique disponível para consulta e venda**
 
 ## Regras de negócio
 
-- Nome obrigatório
-- Status válido
-- ID único
+1. O cadastro deve aceitar:
+    - id
+    - name
+    - status (available, pending, sold)
+
+2. O campo name é obrigatório
+3. O campo status deve aceitar apenas valores válidos
+4. Ao cadastrar com sucesso:
+    - Status code: 200
+    - O pet deve poder ser consultado pelo id
+
+5. Não deve permitir cadastro com payload inválido
 
 ## Mind map
 
-Um mind map só dessa história
 
-Foco em variações e erros
 
 ## Casos de teste
 
-Lista ou tabela
 
-Link para Postman (collection/folder)
 
-Evidências
-
-## Prints ou logs
