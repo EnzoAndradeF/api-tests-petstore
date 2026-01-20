@@ -1,25 +1,43 @@
 # **Teste de API REST e Documentação**
 
-##  Objetivos do Projeto
+##  Visão Geral
 
-- Validação funcional, contrato e regras de negócio
+Este repositório contém um projeto de testes de API REST utilizando a Swagger Petstore como sistema em teste. O objetivo é demonstrar conhecimentos em estratégia, execução e documentação de testes de API.
 
 ##  API Testada
 
 - **Nome:** Swagger Petstore
+- **Tipo:** API REST
 - **URL:** https://petstore.swagger.io/#/  
 
-##  Documentação do Projeto (Navegação)
+## Escopo do Projeto
 
-| Documento | Descrição |
-| :--- | :--- |
-| **[Plano de Teste](./docs/01-plano-de-teste.md)** | Estratégia, escopo (In/Out), ferramentas e critérios de aceite. 
-| **[Casos de Teste](./docs/02-casos-de-teste.md)** | Roteiros de execução passo-a-passo (Step-by-step) e BDD. 
-| **[Bug Report](./docs/bugs/bug-001-imagens-incorretas.md)** | Relatório técnico de um defeito crítico com evidências e logs. 
-| **[Matriz de Rastreabilidade](./docs/03-matriz-rastreabilidade.md)** | Vínculo entre Requisitos, Testes e Bugs (Cobertura). 
+## Estrategia de Testes
+A estratégia de testes utilizada nesse projeto pode ser encontrada em: **[Estratégia de Testes](./docs/estrategia-de-testes.md)**
+
+## Histórias de Usuário Testadas
+**Cada história de usuário está documentada em um único arquivo, contendo:**
+- Entendimento da funcionalidade
+- Regras de negócio
+- Casos de teste
+
+**Histórias abordadas:**
+- **[Cadastro de Pet](./docs/historias/HU01-cadastro-pet.md)**
+- **[Consulta de Pet por ID](./docs/historias/HU02-consulta-pet.md)**
+- **[Atualização de Pet](./docs/historias/HU03-atualizacao-pet.md)**
+- **[Venda de Pet](./docs/historias/HU04-venda-pet.md)**
 
 ## Ferramentas utilizadas
-* **Miro**: Planejamento estratégico e storyboard.
-* **Jira**: Gestão de defeitos.
-* **Jam**: Captura de evidências técnicas e report de bugs.
+* **Postman**: Execução de testes.
+* **Swagger**: Teste de contrato.
 * **Markdown**: Escrita e estruturação da documentação técnica.
+
+## Como Executar os Testes
+1. Importar a collection do Postman
+2. Executar as requisições
+3. Verificar scripts de validações
+4. Consultar evidências na pasta da história
+
+
+
+
