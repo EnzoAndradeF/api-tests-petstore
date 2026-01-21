@@ -13,16 +13,20 @@ Este repositório contém um projeto de testes de API REST utilizando a ServeRes
 - **URL:** https://serverest.dev/
 
 ## Escopo do Projeto
+- Cadastro de usuários
+- Login
+- Cadastro de produto
+- Criação de carrinho de compras
 
-## Estrategia de Testes
-A estratégia de testes utilizada nesse projeto pode ser encontrada em: **[Estratégia de Testes](./docs/estrategia-de-testes.md)**
+## Plano de testes
+O plano de testes utilizada nesse projeto pode ser encontrada em: **[Plano de testes](./docs/plano-de-testes.md)**
 
-## Histórias de Usuário Testadas
+## Histórias de Usuário
 **Cada história de usuário está documentada em um único arquivo, contendo:**
 - Entendimento da funcionalidade
 - Regras de negócio
-- Cenários de teste
-- Casos de teste
+- Casos de testes
+- Atalho para as evidências de execução
 
 **Histórias abordadas:**
 - **[Cadastro de usuario](./docs/historias/HU01-cadastro-de-usuario.md)**
@@ -35,7 +39,6 @@ O relatório de bugs feito nesse projeto está presente em **[Relatório de bugs
 
 ## Ferramentas utilizadas
 * **Postman**: Execução de testes.
-* **Swagger**: Teste de contrato.
 * **Markdown**: Escrita e estruturação da documentação técnica.
 
 ## Como Executar os Testes

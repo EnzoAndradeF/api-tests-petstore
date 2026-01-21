@@ -20,25 +20,72 @@ Para acessar funcionalidades restritas**
    - Senha incorreta
    - Campos vazios
 
-## Mind map
+## Casos de teste
 
-
+| ID | CT02.01 |
+|------|----------|
+| **Objetivo** | Login com credenciais válidas |
+| **Pré-condições** |  Usuário cadastrado |
+| **Método HTTP** | POST |
+| **Endpoint** | /login |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+  "email": "fulano@qa.com",
+  "password": "teste" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint login
+ Preencher a propriedade “nome”
+ Preencher a propriedade “password” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e token de autorização|
 
 ## Casos de teste
-|**ID**|**Descrição**|**Pré-condições**|
-|:-----|:------------|:------------|
-| | | |
 
-
-**Dados da requisição:**
-
-| Campo | Descrição |
+| ID | CT02.02 |
 |------|----------|
-| **Objetivo** | Validar o cadastro de um pet com dados válidos |
-| **Pré-condições** | API Petstore disponível |
+| **Objetivo** | Login com email inexistente |
+| **Pré-condições** | API Serverest disponível |
 | **Método HTTP** | POST |
-| **Endpoint** | /pet |
+| **Endpoint** | /login |
 | **Headers** | Content-Type: application/json |
-| **Massa de Dados** | `{ "id": 123, "name": "Rex", "status": "available" }` |
-| **Ação** | Enviar requisição POST com payload válido |
-| **Resultado Esperado** | Status 200 e retorno dos dados do pet cadastrado |
+| **Massa de Dados:** |
+  "email": "inexistente@email.com",
+  "password": "teste" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint login
+ Preencher a propriedade “nome”
+ Preencher a propriedade “password” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|
+
+| ID | CT02.02 |
+|------|----------|
+| **Objetivo** | Login com senha incorreta |
+| **Pré-condições** | Usuário cadastrado |
+| **Método HTTP** | POST |
+| **Endpoint** | /login |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+  "email": "teste",
+  "password": "teste" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint login
+ Preencher a propriedade “nome”
+ Preencher a propriedade “password” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|
+
+| ID | CT02.03 |
+|------|----------|
+| **Objetivo** | Login com campos vazios |
+| **Pré-condições** | API Serverest disponível |
+| **Método HTTP** | POST |
+| **Endpoint** | /login |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+  "email": "",
+  "password": "" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint login |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|

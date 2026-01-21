@@ -23,25 +23,128 @@ Para que ele possa ser vendido no sistema**
    - Campos obrigatórios vazios
    - Valores inválidos (ex: preço negativo)
 
-## Mind map
-
-
-
 ## Casos de teste
-|**ID**|**Descrição**|**Pré-condições**|
-|:-----|:------------|:------------|
-| | | |
 
-
-**Dados da requisição:**
-
-| Campo | Descrição |
+| ID | CT03.01 |
 |------|----------|
-| **Objetivo** | Validar o cadastro de um pet com dados válidos |
-| **Pré-condições** | API Petstore disponível |
+| **Objetivo** | Cadastro de produto com usuário comum |
+| **Pré-condições** | Usuário comum autenticado / produto não deve estar cadastrado |
 | **Método HTTP** | POST |
-| **Endpoint** | /pet |
+| **Endpoint** | /produtos |
 | **Headers** | Content-Type: application/json |
-| **Massa de Dados** | `{ "id": 123, "name": "Rex", "status": "available" }` |
-| **Ação** | Enviar requisição POST com payload válido |
-| **Resultado Esperado** | Status 200 e retorno dos dados do pet cadastrado |
+| **Massa de Dados:** |
+   "nome": "Logitech MX Vertical",
+  "preco": 470,
+  "descricao": "Mouse",
+  "quantidade": 381 |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade "preco"
+ Preencher a propriedade “descricao”
+ Preencher a propriedade “quantidade” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|
+
+| ID | CT03.02 |
+|------|----------|
+| **Objetivo** | Cadastro de produto com usuário administrador |
+| **Pré-condições** | Usuário administrador autenticado / produto não deve estar cadastrado |
+| **Método HTTP** | POST |
+| **Endpoint** | /produtos |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+   "nome": "Logitech MX Vertical",
+  "preco": 470,
+  "descricao": "Mouse",
+  "quantidade": 381 |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade "preco"
+ Preencher a propriedade “descricao”
+ Preencher a propriedade “quantidade” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e Id do produto|
+
+| ID | CT03.03 |
+|------|----------|
+| **Objetivo** | Cadastro de produto com token expirado |
+| **Pré-condições** | Usuário administrador com token expirado / produto não deve estar cadastrado |
+| **Método HTTP** | POST |
+| **Endpoint** | /produtos |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+   "nome": "Logitech MX Vertical",
+  "preco": 470,
+  "descricao": "Mouse",
+  "quantidade": 381 |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade “password” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|
+
+| ID | CT03.04 |
+|------|----------|
+| **Objetivo** | Cadastro de produto com campos vazios |
+| **Pré-condições** | Usuário administrador autenticado |
+| **Método HTTP** | POST |
+| **Endpoint** | /produtos |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+   "nome": "",
+  "preco": ,
+  "descricao": "",
+  "quantidade":  |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade "preco"
+ Preencher a propriedade “descricao”
+ Preencher a propriedade “quantidade” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e Id do produto|
+
+| ID | CT03.05 |
+|------|----------|
+| **Objetivo** | Cadastro de produto com preço negativo |
+| **Pré-condições** | Usuário administrador autenticado |
+| **Método HTTP** | POST |
+| **Endpoint** | /produtos |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+   "nome": "Logitech MX Vertical",
+  "preco": -50,
+  "descricao": "Mouse",
+  "quantidade": 381  |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade "preco"
+ Preencher a propriedade “descricao”
+ Preencher a propriedade “quantidade” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|
+
+| ID | CT03.06 |
+|------|----------|
+| **Objetivo** | Cadastro de produto com quantidade negativo |
+| **Pré-condições** | Usuário administrador autenticado |
+| **Método HTTP** | POST |
+| **Endpoint** | /produtos |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+   "nome": "Logitech MX Vertical",
+  "preco": 50,
+  "descricao": "Mouse",
+  "quantidade": -381  |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint produtos
+ Preencher a propriedade “nome”
+ Preencher a propriedade "preco"
+ Preencher a propriedade “descricao”
+ Preencher a propriedade “quantidade” |
+| **Resultado Esperado** |O sistema deve retornar o status code 401, mensagem de erro|

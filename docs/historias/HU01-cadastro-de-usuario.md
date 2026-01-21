@@ -24,29 +24,129 @@ Para que eu possa acessar e utilizar a aplicação**
    - Campos vazios
    - Dados inválidos
 
-
-## Mind map
-
-## Cenários de teste
-
 ## Casos de teste
-|**ID**|**Descrição**|**Pré-condições**|
-|:-----|:------------|:------------|
-| | | |
 
-
-**Dados da requisição:**
-
-| Campo | Descrição |
+| ID | CT01.01 |
 |------|----------|
-| **Objetivo** | Validar o cadastro de um pet com dados válidos |
-| **Pré-condições** | API Petstore disponível |
+| **Objetivo** | Realizar o cadastro com credenciais válidas |
+| **Pré-condições** | API Serverest disponível |
 | **Método HTTP** | POST |
-| **Endpoint** | /pet |
+| **Endpoint** | /usuarios |
 | **Headers** | Content-Type: application/json |
-| **Massa de Dados** | `{ "id": 123, "name": "Rex", "status": "available" }` |
-| **Ação** | Enviar requisição POST com payload válido |
-| **Resultado Esperado** | Status 200 e retorno dos dados do pet cadastrado |
+| **Massa de Dados:** |
+ "nome": "enzo comum",
+  "email": "enzocomum@qa.com.br",
+ "password": "teste",
+  "administrador": "true" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint
+ Preencher a propriedade “nome”
+ Preencher a propriedade “email”
+ Preencher a propriedade “password”
+ Preencher a propriedade “administrador” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e Id do usuário|
+
+| ID | CT01.02 |
+|------|----------|
+| **Objetivo** | Realizar o cadastro com email já cadastrado |
+| **Pré-condições** | Email já cadastrado |
+| **Método HTTP** | POST |
+| **Endpoint** | /usuarios |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+ "nome": "Fulano da Silva",
+  "email": "beltrano@qa.com.br",
+ "password": "teste",
+  "administrador": "true" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint
+ Preencher a propriedade “nome”
+ Preencher a propriedade “email”
+ Preencher a propriedade “password”
+ Preencher a propriedade “administrador” |
+| **Resultado Esperado** |status code 400|
+
+| ID | CT01.03 |
+|------|----------|
+| **Objetivo** | Realizar o cadastro com senha de 4 caracteres |
+| **Pré-condições** | API Serverest disponível |
+| **Método HTTP** | POST |
+| **Endpoint** | /usuarios |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+ "nome": "Fulano da Silva",
+  "email": "beltrano@qa.com.br",
+ "password": "abcd",
+  "administrador": "true" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint
+ Preencher a propriedade “nome”
+ Preencher a propriedade “email”
+ Preencher a propriedade “password”
+ Preencher a propriedade “administrador” |
+| **Resultado Esperado** |Senha inválida|
+
+| ID | CT01.04 |
+|------|----------|
+| **Objetivo** | Realizar o cadastro com senha de 5 caracteres |
+| **Pré-condições** | API Serverest disponível |
+| **Método HTTP** | POST |
+| **Endpoint** | /usuarios |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+ "nome": "Fulano da Silva",
+  "email": "beltrano@qa.com.br",
+ "password": "abcde",
+  "administrador": "true" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint
+ Preencher a propriedade “nome”
+ Preencher a propriedade “email”
+ Preencher a propriedade “password”
+ Preencher a propriedade “administrador” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e Id do usuário|
+
+| ID | CT01.05 |
+|------|----------|
+| **Objetivo** | Realizar o cadastro com senha de 6 caracteres |
+| **Pré-condições** | API Serverest disponível |
+| **Método HTTP** | POST |
+| **Endpoint** | /usuarios |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+ "nome": "Fulano da Silva",
+  "email": "beltrano@qa.com.br",
+ "password": "abcdef",
+  "administrador": "true" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint
+ Preencher a propriedade “nome”
+ Preencher a propriedade “email”
+ Preencher a propriedade “password”
+ Preencher a propriedade “administrador” |
+| **Resultado Esperado** |O sistema deve retornar o status code 201, mensagem de sucesso e Id do usuário|
+
+| ID | CT01.06 |
+|------|----------|
+| **Objetivo** | Realizar o cadastro com campos vazios |
+| **Pré-condições** | API Serverest disponível |
+| **Método HTTP** | POST |
+| **Endpoint** | /usuarios |
+| **Headers** | Content-Type: application/json |
+| **Massa de Dados:** |
+ "nome": "",
+  "email": "",
+ "password": "",
+  "administrador": "" |
+| **Ação** |
+ Definir o método HTTP POST
+ Definir o endpoint  |
+| **Resultado Esperado** |status code 400|
 
 ## Evidências
 

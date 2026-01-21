@@ -1,4 +1,4 @@
-# Estratégia de Testes – API Petstore
+# Plano de testes – API Petstore
 
 ## 1. Introdução
 Este documento descreve a estratégia de testes adotada para validação da API **ServeRest**.
@@ -25,7 +25,6 @@ Garantir que os principais endpoints da API funcionem conforme esperado, validan
 - Validação de payload de resposta
 - Testes de contrato utilizando JSON Schema
 - Testes negativos (dados inválidos ou incompletos)
-- Uso de mocks para simular dependências externas (quando aplicável)
 
 ### 3.2 Fora do Escopo
 - Testes de performance
@@ -59,7 +58,7 @@ Cada história de usuário contém:
 - Partição de Equivalência
 - Análise de Valores Limite
 - Testes baseados em regras de negócio
-- Heurísticas de teste (ex.: VADER)
+- Heurísticas de VADER
 
 ---
 
@@ -95,5 +94,5 @@ Os defeitos encontrados são registrados em um relatório simples, contendo:
 ---
 
 ## 11. Evidências de Teste
-As evidências de execução dos testes (prints e logs) estão armazenadas na pasta:
+As evidências de execução dos testes estão armazenadas na pasta: **[Evidências](/evidencias/)**
 
